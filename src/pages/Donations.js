@@ -22,21 +22,21 @@ const Donations = () => {
 
   const fetchOrgName = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings/public/organization_name', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings/public/organization_name`, { headers: { authorization: token } });
       setOrgName(res.data.value);
     } catch (error) {}
   };
 
   const fetchContactPhone = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings/public/contact_phone', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings/public/contact_phone`, { headers: { authorization: token } });
       setContactPhone(res.data.value);
     } catch (error) {}
   };
 
   const fetchFunerals = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/all', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/all`, { headers: { authorization: token } });
       setFunerals(res.data.funerals);
     } catch (error) {
       toast.error('Failed to load funerals');

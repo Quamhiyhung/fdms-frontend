@@ -18,7 +18,7 @@ const Assignments = () => {
 
   const fetchFunerals = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/all', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/all`, { headers: { authorization: token } });
       setFunerals(res.data.funerals);
     } catch (error) {
       toast.error('Failed to load funerals');
@@ -27,7 +27,7 @@ const Assignments = () => {
 
   const fetchAdmins = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/users/2', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/users/2`, { headers: { authorization: token } });
       setAdmins(res.data.users);
     } catch (error) {
       toast.error('Failed to load admins');
@@ -36,7 +36,7 @@ const Assignments = () => {
 
   const fetchTellers = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/users/3', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/users/3`, { headers: { authorization: token } });
       setTellers(res.data.users);
     } catch (error) {
       toast.error('Failed to load tellers');
@@ -63,7 +63,7 @@ const Assignments = () => {
       return;
     }
     try {
-      await axios.post('${API_BASE}/api/funerals/assign',
+      await axios.post(`${API_BASE}/api/funerals/assign`,
         { funeral_id: selectedFuneral, user_id: selectedUser, assigned_role: selectedRole },
         { headers: { authorization: token } }
       );

@@ -14,7 +14,8 @@ const TellerDashboard = () => {
   const [contactPhone, setContactPhone] = useState('');
   const token = localStorage.getItem('token');
 
-  useEffect(() => { fetchDashboard(); fetchOrgName(); fetchContactPhone(); }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => { fetchDashboard(); fetchOrgName(); fetchContactPhone(); }, []);
 
   const fetchOrgName = async () => {
     try {

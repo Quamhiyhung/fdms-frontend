@@ -12,7 +12,7 @@ const EditRequests = () => {
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/donations/edit-requests/pending', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/donations/edit-requests/pending`, { headers: { authorization: token } });
       setRequests(res.data.requests);
     } catch (error) {
       toast.error('Failed to load edit requests');

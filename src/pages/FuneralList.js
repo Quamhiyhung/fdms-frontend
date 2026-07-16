@@ -21,7 +21,7 @@ const FuneralList = () => {
 
   const fetchFunerals = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/all', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/all`, { headers: { authorization: token } });
       setFunerals(res.data.funerals);
     } catch (error) {
       toast.error('Failed to load funerals');
@@ -38,7 +38,7 @@ const FuneralList = () => {
       formData.append('funeral_date', form.funeral_date);
       formData.append('venue', form.venue);
       if (photo) formData.append('photo', photo);
-      await axios.post('${API_BASE}/api/funerals/create', formData, {
+      await axios.post(`${API_BASE}/api/funerals/create`, formData, {
         headers: { authorization: token, 'Content-Type': 'multipart/form-data' }
       });
       toast.success('Funeral created successfully!');

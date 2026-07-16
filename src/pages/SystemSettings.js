@@ -13,7 +13,7 @@ const SystemSettings = () => {
 
   const fetchSettings = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings`, { headers: { authorization: token } });
       setSettings(res.data.settings);
       const initial = {};
       res.data.settings.forEach(s => { initial[s.setting_key] = s.setting_value; });
@@ -35,7 +35,7 @@ const SystemSettings = () => {
 
   const handleBackup = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings/backup/generate', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings/backup/generate`, { headers: { authorization: token } });
       const dataStr = JSON.stringify(res.data, null, 2);
       const blob = new Blob([dataStr], { type: 'application/json' });
       const url = URL.createObjectURL(blob);

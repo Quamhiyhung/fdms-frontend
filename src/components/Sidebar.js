@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   const fetchOrgName = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings/public/organization_name', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings/public/organization_name`, { headers: { authorization: token } });
       setOrgName(res.data.value);
     } catch (error) {
       // fallback stays as FDMS

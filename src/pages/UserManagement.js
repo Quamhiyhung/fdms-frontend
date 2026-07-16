@@ -13,7 +13,8 @@ const UserManagement = () => {
   const [newPassword, setNewPassword] = useState('');
   const token = localStorage.getItem('token');
 
-  useEffect(() => { fetchUsers(); }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => { fetchUsers(); }, []);
 
   const fetchUsers = async () => {
     try {

@@ -15,7 +15,7 @@ const Messaging = () => {
 
   const fetchFunerals = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/all', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/all`, { headers: { authorization: token } });
       setFunerals(res.data.funerals);
     } catch (error) {
       toast.error('Failed to load funerals');
@@ -38,7 +38,7 @@ const Messaging = () => {
 
   const createCampaign = async () => {
     try {
-      const res = await axios.post('${API_BASE}/api/messaging/create',
+      const res = await axios.post(`${API_BASE}/api/messaging/create`,
         { funeral_id: selectedFuneral, message },
         { headers: { authorization: token } }
       );

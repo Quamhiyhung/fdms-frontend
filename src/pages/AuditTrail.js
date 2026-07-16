@@ -14,7 +14,7 @@ const AuditTrail = () => {
 
   const fetchLogs = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/auth/audit-logs', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/auth/audit-logs`, { headers: { authorization: token } });
       setLogs(res.data.logs);
     } catch (error) {
       toast.error('Failed to load audit logs');

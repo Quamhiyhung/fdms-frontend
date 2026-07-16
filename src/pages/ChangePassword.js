@@ -19,7 +19,7 @@ const ChangePassword = () => {
       return;
     }
     try {
-      await axios.put('${API_BASE}/api/auth/change-password',
+      await axios.put(`${API_BASE}/api/auth/change-password`,
         { current_password: form.current_password, new_password: form.new_password },
         { headers: { authorization: token } }
       );

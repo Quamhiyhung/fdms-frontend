@@ -17,7 +17,7 @@ const Reports = () => {
 
   const fetchFunerals = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/all', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/all`, { headers: { authorization: token } });
       setFunerals(res.data.funerals);
     } catch (error) {
       toast.error('Failed to load funerals');

@@ -16,7 +16,7 @@ const SuperAdminDashboard = () => {
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/dashboard/super-admin', {
+      const res = await axios.get(`${API_BASE}/api/dashboard/super-admin`, {
         headers: { authorization: token }
       });
       setData(res.data);

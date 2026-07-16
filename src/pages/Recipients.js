@@ -15,7 +15,7 @@ const Recipients = () => {
 
   const fetchFunerals = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/funerals/all', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/funerals/all`, { headers: { authorization: token } });
       setFunerals(res.data.funerals);
     } catch (error) {
       toast.error('Failed to load funerals');
@@ -42,7 +42,7 @@ const Recipients = () => {
       const fullName = form.relationship
         ? `${form.name} (${form.relationship})`
         : form.name;
-      await axios.post('${API_BASE}/api/donations/recipients/add',
+      await axios.post(`${API_BASE}/api/donations/recipients/add`,
         { funeral_id: selectedFuneral, name: fullName },
         { headers: { authorization: token } }
       );
