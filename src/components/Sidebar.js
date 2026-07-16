@@ -10,7 +10,7 @@ const Sidebar = () => {
   const token = localStorage.getItem('token');
   const [orgName, setOrgName] = useState('FDMS');
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     fetchOrgName();
   }, []);
