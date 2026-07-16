@@ -17,7 +17,7 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/auth/users', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/auth/users`, { headers: { authorization: token } });
       setUsers(res.data.users);
     } catch (error) {
       toast.error('Failed to load users');
@@ -27,7 +27,7 @@ const UserManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('${API_BASE}/api/auth/register', form, { headers: { authorization: token } });
+      await axios.post(`${API_BASE}/api/auth/register`, form, { headers: { authorization: token } });
       toast.success('User created successfully!');
       setForm({ full_name: '', email: '', password: '', role_id: '2' });
       fetchUsers();

@@ -18,21 +18,21 @@ const TellerDashboard = () => {
 
   const fetchOrgName = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings/public/organization_name', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings/public/organization_name`, { headers: { authorization: token } });
       setOrgName(res.data.value);
     } catch (error) {}
   };
 
   const fetchContactPhone = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/settings/public/contact_phone', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/settings/public/contact_phone`, { headers: { authorization: token } });
       setContactPhone(res.data.value);
     } catch (error) {}
   };
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get('${API_BASE}/api/dashboard/teller', { headers: { authorization: token } });
+      const res = await axios.get(`${API_BASE}/api/dashboard/teller`, { headers: { authorization: token } });
       setData(res.data);
     } catch (error) {
       toast.error('Failed to load dashboard');
