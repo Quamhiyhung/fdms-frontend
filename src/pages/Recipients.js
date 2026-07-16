@@ -11,6 +11,7 @@ const Recipients = () => {
   const [form, setForm] = useState({ name: '', relationship: '' });
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchFunerals(); }, []);
 
   const fetchFunerals = async () => {

@@ -8,6 +8,7 @@ const EditRequests = () => {
   const [requests, setRequests] = useState([]);
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchRequests(); }, []);
 
   const fetchRequests = async () => {

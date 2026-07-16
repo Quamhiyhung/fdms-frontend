@@ -10,6 +10,7 @@ const FuneralAdminDashboard = () => {
   const [data, setData] = useState(null);
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchFunerals(); }, []);
 
   const fetchFunerals = async () => {

@@ -14,6 +14,7 @@ const Assignments = () => {
   const [selectedRole, setSelectedRole] = useState('funeral_admin');
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchFunerals(); fetchAdmins(); fetchTellers(); }, []);
 
   const fetchFunerals = async () => {

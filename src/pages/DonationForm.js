@@ -14,6 +14,7 @@ const DonationForm = () => {
   const [contactPhone, setContactPhone] = useState('');
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchFunerals(); fetchOrgName(); fetchContactPhone(); }, []);
 
   const fetchOrgName = async () => {

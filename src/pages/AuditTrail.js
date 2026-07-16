@@ -10,6 +10,7 @@ const AuditTrail = () => {
   const [filterEntity, setFilterEntity] = useState('');
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchLogs(); }, []);
 
   const fetchLogs = async () => {

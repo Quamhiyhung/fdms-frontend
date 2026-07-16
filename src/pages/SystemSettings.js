@@ -9,6 +9,7 @@ const SystemSettings = () => {
   const [editValues, setEditValues] = useState({});
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchSettings(); }, []);
 
   const fetchSettings = async () => {

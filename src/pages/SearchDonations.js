@@ -11,6 +11,7 @@ const SearchDonations = () => {
   const [results, setResults] = useState([]);
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchFunerals(); }, []);
 
   const fetchFunerals = async () => {
