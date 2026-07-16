@@ -12,8 +12,12 @@ const Sidebar = () => {
 
 
   useEffect(() => {
-    fetchOrgName();
-  }, []);
+  const fetchOrgName = async () => {
+    // code
+  };
+
+  fetchOrgName();
+}, []);
 
   const fetchOrgName = async () => {
     try {

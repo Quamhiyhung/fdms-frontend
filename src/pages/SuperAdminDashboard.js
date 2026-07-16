@@ -11,8 +11,8 @@ const SuperAdminDashboard = () => {
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
-    fetchDashboard();
-  }, []);
+   fetchDashboard();
+}, [fetchDashboard]);
 
   const fetchDashboard = async () => {
     try {
