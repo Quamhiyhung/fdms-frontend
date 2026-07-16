@@ -11,20 +11,22 @@ const SuperAdminDashboard = () => {
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
-   fetchDashboard();
-}, [fetchDashboard]);
-
   const fetchDashboard = async () => {
     try {
       const res = await axios.get(`${API_BASE}/api/dashboard/super-admin`, {
         headers: { authorization: token }
       });
+
       setData(res.data);
     } catch (error) {
-      toast.error('Failed to load dashboard');
+      toast.error("Failed to load dashboard");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
+
+  fetchDashboard();
+}, [token]);
 
   if (loading) return <div style={styles.loading}>Loading dashboard...</div>;
 
